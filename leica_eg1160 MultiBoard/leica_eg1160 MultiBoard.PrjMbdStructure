@@ -1,0 +1,4 @@
+Record=DiagramHierarchy|SourceDocument=leica_eg1160.MbsDoc|Kind=Multi-board Schematic Module|Designator=2|Source=..\Leica_EG1160 lcd board\Leica_EG1160 lcd board.PrjPcb
+Record=SubProject|SourceDocument=leica_eg1160.MbsDoc|ProjectPath=..\Leica_EG1160 lcd board\Leica_EG1160 lcd board.PrjPcb
+Record=DiagramHierarchy|SourceDocument=leica_eg1160.MbsDoc|Kind=Multi-board Schematic Module|Designator=1|Source=..\Leica_EG1160 main board\Leica_EG1160 main board.PrjPcb
+Record=SubProject|SourceDocument=leica_eg1160.MbsDoc|ProjectPath=..\Leica_EG1160 main board\Leica_EG1160 main board.PrjPcb
