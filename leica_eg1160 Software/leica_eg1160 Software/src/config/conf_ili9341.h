@@ -47,7 +47,7 @@
  * microcontroller a normal limitation would be CPUclk/2. For more details
  * please refer to the device datasheet.
  */
-#define CONF_ILI9341_CLOCK_SPEED   8000000UL
+#define CONF_ILI9341_CLOCK_SPEED   32000000UL
 
 /**
  * \name XMEGA typical configurations
@@ -64,16 +64,16 @@
 /* #define CONF_ILI9341_USART_SPI     &USARTC0 */
 
 /** \brief Define what MCU pin the ILI9341 chip select pin is connected to */
-#define CONF_ILI9341_CS_PIN        IOPORT_CREATE_PIN(PORTC, 5)
+#define CONF_ILI9341_CS_PIN        IOPORT_CREATE_PIN(PORTC, 0)
 
 /** \brief Define what MCU pin the ILI9341 DC pin is connected to */
-#define CONF_ILI9341_DC_PIN        IOPORT_CREATE_PIN(PORTC, 4)
+#define CONF_ILI9341_DC_PIN        IOPORT_CREATE_PIN(PORTC, 1)
 
 /** \brief Define what MCU pin the ILI9341 back light pin is connected to */
-#define CONF_ILI9341_BACKLIGHT_PIN IOPORT_CREATE_PIN(PORTA, 5)
+#define CONF_ILI9341_BACKLIGHT_PIN IOPORT_CREATE_PIN(PORTC, 4)
 
 /** \brief Define what MCU pin the ILI9341 reset is connected to */
-#define CONF_ILI9341_RESET_PIN     IOPORT_CREATE_PIN(PORTA, 7)
+#define CONF_ILI9341_RESET_PIN     IOPORT_CREATE_PIN(PORTC, 2)
 
 /** @} */
 
