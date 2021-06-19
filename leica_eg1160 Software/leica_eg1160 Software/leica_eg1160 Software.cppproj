@@ -37,8 +37,13 @@
     <option id="common.services.ioport" value="Add" config="" content-id="Atmel.ASF" />
     <option id="xmega.drivers.adc" value="Add" config="" content-id="Atmel.ASF" />
     <option id="xmega.drivers.tc" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="common.services.gfx" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="common.services.gfx.font" value="Add" config="" content-id="Atmel.ASF" />
   </options>
-  <configurations />
+  <configurations>
+    <configuration key="config.gfx.display" value="ili9341_sdt028atft" default="ili9341_sdt028atft" content-id="Atmel.ASF" />
+    <configuration key="config.spi_master_type" value="standard_spi" default="standard_spi" content-id="Atmel.ASF" />
+  </configurations>
   <files>
     <file path="src/main.c" framework="" version="" source="common/applications/user_application/main.c" changed="False" content-id="Atmel.ASF" />
     <file path="src/config/conf_board.h" framework="" version="" source="common/applications/user_application/user_board/config/conf_board.h" changed="False" content-id="Atmel.ASF" />
@@ -92,6 +97,26 @@
     <file path="src/Config/conf_adc.h" framework="" version="3.49.1" source="xmega\drivers\adc\module_config\conf_adc.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/ASF/xmega/drivers/tc/tc.c" framework="" version="3.49.1" source="xmega\drivers\tc\tc.c" changed="False" content-id="Atmel.ASF" />
     <file path="src/ASF/xmega/drivers/tc/tc.h" framework="" version="3.49.1" source="xmega\drivers\tc\tc.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/components/display/ili9341/ili9341.c" framework="" version="3.49.1" source="common\components\display\ili9341\ili9341.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/components/display/ili9341/ili9341_regs.h" framework="" version="3.49.1" source="common\components\display\ili9341\ili9341_regs.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/components/display/ili9341/ili9341.h" framework="" version="3.49.1" source="common\components\display\ili9341\ili9341.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/gfx.h" framework="" version="3.49.1" source="common\services\gfx\gfx.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/gfx_text.c" framework="" version="3.49.1" source="common\services\gfx\gfx_text.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/sysfont.c" framework="" version="3.49.1" source="common\services\gfx\sysfont.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/sysfont.h" framework="" version="3.49.1" source="common\services\gfx\sysfont.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/gfx_text.h" framework="" version="3.49.1" source="common\services\gfx\gfx_text.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/Config/conf_sysfont.h" framework="" version="3.49.1" source="common\services\gfx\module_config\conf_sysfont.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/xmega/drivers/spi/spi.c" framework="" version="3.49.1" source="xmega\drivers\spi\spi.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/xmega/drivers/spi/spi.h" framework="" version="3.49.1" source="xmega\drivers\spi\spi.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/Config/conf_ili9341.h" framework="" version="3.49.1" source="common\components\display\ili9341\module_config\xmega\conf_ili9341.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/gfx_generic.c" framework="" version="3.49.1" source="common\services\gfx\gfx_generic.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/gfx_generic.h" framework="" version="3.49.1" source="common\services\gfx\gfx_generic.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/gfx_ili9341_sdt028atft.c" framework="" version="3.49.1" source="common\services\gfx\gfx_ili9341_sdt028atft.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/gfx/gfx_ili9341_sdt028atft.h" framework="" version="3.49.1" source="common\services\gfx\gfx_ili9341_sdt028atft.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/spi/xmega_spi/spi_master.c" framework="" version="3.49.1" source="common\services\spi\xmega_spi\spi_master.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/spi/spi_master.h" framework="" version="3.49.1" source="common\services\spi\spi_master.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/spi/xmega_spi/spi_master.h" framework="" version="3.49.1" source="common\services\spi\xmega_spi\spi_master.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/Config/conf_spi_master.h" framework="" version="3.49.1" source="common\services\spi\xmega_spi\module_config\conf_spi_master.h" changed="False" content-id="Atmel.ASF" />
   </files>
   <documentation help="https://asf.microchip.com/docs/3.49.1/common.applications.user_application.user_board.xmegaau/html/index.html" />
   <offline-documentation help="" />
@@ -116,6 +141,7 @@
     <ListValues>
       <Value>NDEBUG</Value>
       <Value>BOARD=USER_BOARD</Value>
+      <Value>CONF_GFX_ILI9341_SDT028ATFT=1</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
@@ -138,6 +164,11 @@
       <Value>../src/ASF/common/services/sleepmgr</Value>
       <Value>../src/ASF/xmega/drivers/adc</Value>
       <Value>../src/ASF/xmega/drivers/tc</Value>
+      <Value>../src/ASF/common/components/display/ili9341</Value>
+      <Value>../src/ASF/common/services/gfx</Value>
+      <Value>../src/ASF/xmega/drivers/spi</Value>
+      <Value>../src/ASF/common/services/spi/xmega_spi</Value>
+      <Value>../src/ASF/common/services/spi</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -152,6 +183,7 @@
     <ListValues>
       <Value>NDEBUG</Value>
       <Value>BOARD=USER_BOARD</Value>
+      <Value>CONF_GFX_ILI9341_SDT028ATFT=1</Value>
     </ListValues>
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
@@ -174,6 +206,11 @@
       <Value>../src/ASF/common/services/sleepmgr</Value>
       <Value>../src/ASF/xmega/drivers/adc</Value>
       <Value>../src/ASF/xmega/drivers/tc</Value>
+      <Value>../src/ASF/common/components/display/ili9341</Value>
+      <Value>../src/ASF/common/services/gfx</Value>
+      <Value>../src/ASF/xmega/drivers/spi</Value>
+      <Value>../src/ASF/common/services/spi/xmega_spi</Value>
+      <Value>../src/ASF/common/services/spi</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -205,6 +242,11 @@
       <Value>../src/ASF/common/services/sleepmgr</Value>
       <Value>../src/ASF/xmega/drivers/adc</Value>
       <Value>../src/ASF/xmega/drivers/tc</Value>
+      <Value>../src/ASF/common/components/display/ili9341</Value>
+      <Value>../src/ASF/common/services/gfx</Value>
+      <Value>../src/ASF/xmega/drivers/spi</Value>
+      <Value>../src/ASF/common/services/spi/xmega_spi</Value>
+      <Value>../src/ASF/common/services/spi</Value>
     </ListValues>
   </avrgcccpp.assembler.general.IncludePaths>
 </AvrGccCpp>
@@ -223,6 +265,7 @@
     <ListValues>
       <Value>DEBUG</Value>
       <Value>BOARD=USER_BOARD</Value>
+      <Value>CONF_GFX_ILI9341_SDT028ATFT=1</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
@@ -245,6 +288,11 @@
       <Value>../src/ASF/common/services/sleepmgr</Value>
       <Value>../src/ASF/xmega/drivers/adc</Value>
       <Value>../src/ASF/xmega/drivers/tc</Value>
+      <Value>../src/ASF/common/components/display/ili9341</Value>
+      <Value>../src/ASF/common/services/gfx</Value>
+      <Value>../src/ASF/xmega/drivers/spi</Value>
+      <Value>../src/ASF/common/services/spi/xmega_spi</Value>
+      <Value>../src/ASF/common/services/spi</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -260,6 +308,7 @@
     <ListValues>
       <Value>DEBUG</Value>
       <Value>BOARD=USER_BOARD</Value>
+      <Value>CONF_GFX_ILI9341_SDT028ATFT=1</Value>
     </ListValues>
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
@@ -282,6 +331,11 @@
       <Value>../src/ASF/common/services/sleepmgr</Value>
       <Value>../src/ASF/xmega/drivers/adc</Value>
       <Value>../src/ASF/xmega/drivers/tc</Value>
+      <Value>../src/ASF/common/components/display/ili9341</Value>
+      <Value>../src/ASF/common/services/gfx</Value>
+      <Value>../src/ASF/xmega/drivers/spi</Value>
+      <Value>../src/ASF/common/services/spi/xmega_spi</Value>
+      <Value>../src/ASF/common/services/spi</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcccpp.compiler.optimization.level>
@@ -314,6 +368,11 @@
       <Value>../src/ASF/common/services/sleepmgr</Value>
       <Value>../src/ASF/xmega/drivers/adc</Value>
       <Value>../src/ASF/xmega/drivers/tc</Value>
+      <Value>../src/ASF/common/components/display/ili9341</Value>
+      <Value>../src/ASF/common/services/gfx</Value>
+      <Value>../src/ASF/xmega/drivers/spi</Value>
+      <Value>../src/ASF/common/services/spi/xmega_spi</Value>
+      <Value>../src/ASF/common/services/spi</Value>
     </ListValues>
   </avrgcccpp.assembler.general.IncludePaths>
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
@@ -324,6 +383,66 @@
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\ASF\common\components\display\ili9341\ili9341.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\services\gfx\gfx_generic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\services\gfx\gfx_ili9341_sdt028atft.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\config\conf_spi_master.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\spi\xmega_spi\spi_master.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\spi\spi_master.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\spi\xmega_spi\spi_master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\gfx\gfx_ili9341_sdt028atft.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gfx\gfx_generic.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\gfx\gfx_text.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\drivers\spi\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\config\conf_ili9341.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\drivers\spi\spi.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_sysfont.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gfx\gfx_text.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\gfx\sysfont.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\gfx\sysfont.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gfx\gfx.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\components\display\ili9341\ili9341.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\components\display\ili9341\ili9341_regs.h">
+      <SubType>compile</SubType>
+    </None>
     <Compile Include="src\ASF\xmega\drivers\adc\adc.c">
       <SubType>compile</SubType>
     </Compile>
@@ -487,15 +606,21 @@
     <Folder Include="src\ASF\common\" />
     <Folder Include="src\ASF\common\boards\" />
     <Folder Include="src\ASF\common\boards\user_board\" />
+    <Folder Include="src\ASF\common\components\" />
+    <Folder Include="src\ASF\common\components\display\" />
+    <Folder Include="src\ASF\common\components\display\ili9341\" />
     <Folder Include="src\ASF\common\services\" />
     <Folder Include="src\ASF\common\services\clock\" />
     <Folder Include="src\ASF\common\services\clock\xmega\" />
     <Folder Include="src\ASF\common\services\delay\" />
     <Folder Include="src\ASF\common\services\delay\xmega\" />
+    <Folder Include="src\ASF\common\services\gfx\" />
     <Folder Include="src\ASF\common\services\ioport\" />
     <Folder Include="src\ASF\common\services\ioport\xmega\" />
     <Folder Include="src\ASF\common\services\sleepmgr\" />
     <Folder Include="src\ASF\common\services\sleepmgr\xmega\" />
+    <Folder Include="src\ASF\common\services\spi\" />
+    <Folder Include="src\ASF\common\services\spi\xmega_spi\" />
     <Folder Include="src\ASF\common\utils\" />
     <Folder Include="src\ASF\common\utils\interrupt\" />
     <Folder Include="src\ASF\common\utils\make\" />
@@ -507,6 +632,7 @@
     <Folder Include="src\ASF\xmega\drivers\nvm\" />
     <Folder Include="src\ASF\xmega\drivers\pmic\" />
     <Folder Include="src\ASF\xmega\drivers\sleep\" />
+    <Folder Include="src\ASF\xmega\drivers\spi\" />
     <Folder Include="src\ASF\xmega\drivers\tc\" />
     <Folder Include="src\ASF\xmega\utils\" />
     <Folder Include="src\ASF\xmega\utils\assembler\" />

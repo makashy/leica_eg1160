@@ -65,6 +65,12 @@
 // From module: Delay routines
 #include <delay.h>
 
+// From module: GFX Color - Color Graphic Library
+#include <gfx.h>
+
+// From module: GFX Color - System Font
+#include <sysfont.h>
+
 // From module: Generic board support
 #include <board.h>
 
@@ -74,6 +80,9 @@
 // From module: Interrupt management - XMEGA implementation
 #include <interrupt.h>
 
+// From module: LCD - ILI9341 Display Controller
+#include <ili9341.h>
+
 // From module: NVM - Non Volatile Memory
 #include <nvm.h>
 
@@ -82,6 +91,13 @@
 
 // From module: Part identification macros
 #include <parts.h>
+
+// From module: SPI - Serial Peripheral Interface
+#include <spi.h>
+
+// From module: SPI - XMEGA implementation
+#include <spi_master.h>
+#include <spi_master.h>
 
 // From module: Sleep Controller driver
 #include <sleep.h>
