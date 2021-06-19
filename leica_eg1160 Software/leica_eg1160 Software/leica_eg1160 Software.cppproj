@@ -34,6 +34,7 @@
     <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.basic.clock" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.ioport" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
   </options>
   <configurations />
   <files>
@@ -75,6 +76,8 @@
     <file path="src/ASF/common/services/ioport/xmega/ioport_compat.h" framework="" version="3.49.1" source="common\services\ioport\xmega\ioport_compat.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/ASF/common/services/ioport/xmega/ioport.h" framework="" version="3.49.1" source="common\services\ioport\xmega\ioport.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/ASF/common/services/ioport/ioport.h" framework="" version="3.49.1" source="common\services\ioport\ioport.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/delay/delay.h" framework="" version="3.49.1" source="common\services\delay\delay.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/common/services/delay/xmega/cycle_counter.h" framework="" version="3.49.1" source="common\services\delay\xmega\cycle_counter.h" changed="False" content-id="Atmel.ASF" />
   </files>
   <documentation help="https://asf.microchip.com/docs/3.49.1/common.applications.user_application.user_board.xmegaau/html/index.html" />
   <offline-documentation help="" />
@@ -115,6 +118,7 @@
       <Value>../src/ASF/xmega/drivers/nvm</Value>
       <Value>../src/ASF/common/services/clock</Value>
       <Value>../src/ASF/common/services/ioport</Value>
+      <Value>../src/ASF/common/services/delay</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -145,6 +149,7 @@
       <Value>../src/ASF/xmega/drivers/nvm</Value>
       <Value>../src/ASF/common/services/clock</Value>
       <Value>../src/ASF/common/services/ioport</Value>
+      <Value>../src/ASF/common/services/delay</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -170,6 +175,7 @@
       <Value>../src/ASF/xmega/drivers/nvm</Value>
       <Value>../src/ASF/common/services/clock</Value>
       <Value>../src/ASF/common/services/ioport</Value>
+      <Value>../src/ASF/common/services/delay</Value>
     </ListValues>
   </avrgcccpp.assembler.general.IncludePaths>
 </AvrGccCpp>
@@ -204,6 +210,7 @@
       <Value>../src/ASF/xmega/drivers/nvm</Value>
       <Value>../src/ASF/common/services/clock</Value>
       <Value>../src/ASF/common/services/ioport</Value>
+      <Value>../src/ASF/common/services/delay</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -235,6 +242,7 @@
       <Value>../src/ASF/xmega/drivers/nvm</Value>
       <Value>../src/ASF/common/services/clock</Value>
       <Value>../src/ASF/common/services/ioport</Value>
+      <Value>../src/ASF/common/services/delay</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcccpp.compiler.optimization.level>
@@ -261,6 +269,7 @@
       <Value>../src/ASF/xmega/drivers/nvm</Value>
       <Value>../src/ASF/common/services/clock</Value>
       <Value>../src/ASF/common/services/ioport</Value>
+      <Value>../src/ASF/common/services/delay</Value>
     </ListValues>
   </avrgcccpp.assembler.general.IncludePaths>
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
@@ -271,6 +280,12 @@
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <None Include="src\ASF\common\services\delay\xmega\cycle_counter.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\delay\delay.h">
+      <SubType>compile</SubType>
+    </None>
     <None Include="src\ASF\common\services\ioport\ioport.h">
       <SubType>compile</SubType>
     </None>
@@ -395,6 +410,8 @@
     <Folder Include="src\ASF\common\services\" />
     <Folder Include="src\ASF\common\services\clock\" />
     <Folder Include="src\ASF\common\services\clock\xmega\" />
+    <Folder Include="src\ASF\common\services\delay\" />
+    <Folder Include="src\ASF\common\services\delay\xmega\" />
     <Folder Include="src\ASF\common\services\ioport\" />
     <Folder Include="src\ASF\common\services\ioport\xmega\" />
     <Folder Include="src\ASF\common\utils\" />
