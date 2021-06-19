@@ -46,6 +46,7 @@
 #include "status_codes.h"
 #include "ioport.h"
 #include "spi.h"
+#include "./xmega/ioport_compat.h"
 
 #ifdef __cplusplus
 extern "C" {
