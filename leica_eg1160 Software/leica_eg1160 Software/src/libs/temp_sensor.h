@@ -9,6 +9,7 @@
 #ifndef TEMP_SENSOR_H_
 #define TEMP_SENSOR_H_
 #include "asf.h"
+#include <math.h>
 
 class AdcSettings{
 	

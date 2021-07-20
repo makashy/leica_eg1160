@@ -60,10 +60,16 @@ float PT1000::get_temperature(){
 	//}
 	adc_start_conversion(&ADCA, adc_settings.adc_channel);
 	adc_wait_for_interrupt_flag(&ADCA, adc_settings.adc_channel);
-	result = (-static_cast<float>(adc_get_signed_result(&ADCA, adc_settings.adc_channel) - adc_settings.adc_offset)- result)*0.001 + result;
-	voltage = result*3.3/1.6/2048.0/adc_settings.opamp_gain;
-	resistance = (adc_settings.sreies_resistor * ( 1.0 / ( 0.49954 - static_cast<float>(result) / adc_settings.composite_coefficient) - 1.0) - resistance) * 1 + resistance;
-	temperature = (resistance - 1000)/static_cast<float>(4);
+	result = (adc_get_signed_result(&ADCA, adc_settings.adc_channel) - result)*0.001 + result;
+	
+	//voltage = (result - adc_settings.adc_offset) * adc_settings.R1R2_ratio;
+	resistance = adc_settings.sreies_resistor * (1/(result - adc_settings.adc_offset)/adc_settings.R1R2_ratio - 1);
+	
+	voltage =(resistance - 1000)/static_cast<float>(4);
+	float a = 3.90802e-03;
+	float b = -5.80195e-07;
+	float R0 = 1000;
+	temperature = (-R0 * a + sqrt(pow(R0 * a, 2) - 4 * R0 * b * (R0 - resistance)))/ (2 * R0 * b);
 	
 	State_t new_state = (abs(control_settings.set_point - temperature) > control_settings.display_threshold)? WITH_ERROR : WITHOUT_ERROR;
 	state_change = (new_state != state)? true:state_change;
