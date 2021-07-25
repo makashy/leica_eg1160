@@ -13,12 +13,10 @@ AdcSettings::AdcSettings(uint8_t adc_channel,
 						 enum    adcch_negative_input neg,
 						 uint8_t opamp_gain,
 						 float   adc_offset,
-						 float   sreies_resistor,
-						 float   composite_coefficient,
-						 float   R1R2_ratio)
+						 float   adc_gain,
+						 float   sreies_resistor)
 						 :adc_channel(adc_channel), pos(pos), neg(neg), opamp_gain(opamp_gain),
-						 adc_offset(adc_offset), sreies_resistor(sreies_resistor),
-						 composite_coefficient(composite_coefficient), R1R2_ratio(R1R2_ratio){
+						 adc_offset(adc_offset), adc_gain(adc_gain), sreies_resistor(sreies_resistor){
 							 
 						 }
 						 
@@ -53,23 +51,17 @@ PT1000::PT1000(const char *label,
 }
 
 float PT1000::get_temperature(){
-	//for(int i = 0;i<3;i++){
-		//adc_start_conversion(&ADCA, adc_settings.adc_channel);
-		//adc_wait_for_interrupt_flag(&ADCA, adc_settings.adc_channel);
-		//result = (-static_cast<float>(adc_get_signed_result(&ADCA, adc_settings.adc_channel) - adc_settings.adc_offset)- result)*0.001 + result;
-	//}
 	adc_start_conversion(&ADCA, adc_settings.adc_channel);
 	adc_wait_for_interrupt_flag(&ADCA, adc_settings.adc_channel);
-	result = (adc_get_signed_result(&ADCA, adc_settings.adc_channel) - result)*0.001 + result;
-	
-	//voltage = (result - adc_settings.adc_offset) * adc_settings.R1R2_ratio;
-	resistance = adc_settings.sreies_resistor * (1/(result - adc_settings.adc_offset)/adc_settings.R1R2_ratio - 1);
-	
+	result = adc_get_signed_result(&ADCA, adc_settings.adc_channel);
+	resistance = adc_settings.sreies_resistor * (1/(result - adc_settings.adc_offset)/adc_settings.adc_gain - 1);
 	voltage =(resistance - 1000)/static_cast<float>(4);
+	
 	float a = 3.90802e-03;
 	float b = -5.80195e-07;
 	float R0 = 1000;
-	temperature = (-R0 * a + sqrt(pow(R0 * a, 2) - 4 * R0 * b * (R0 - resistance)))/ (2 * R0 * b);
+	float new_temperature = (-R0 * a + sqrt(pow(R0 * a, 2) - 4 * R0 * b * (R0 - resistance)))/ (2 * R0 * b);
+	temperature = (new_temperature - temperature) * 0.001 + temperature;
 	
 	State_t new_state = (abs(control_settings.set_point - temperature) > control_settings.display_threshold)? WITH_ERROR : WITHOUT_ERROR;
 	state_change = (new_state != state)? true:state_change;

@@ -19,18 +19,16 @@ class AdcSettings{
 				enum    adcch_negative_input neg,
 				uint8_t opamp_gain,
 				float   adc_offset,
-				float   sreies_resistor,
-				float   composite_coefficient,
-				float   R1R2_ratio);
+				float	adc_gain,
+				float   sreies_resistor);
 
 	uint8_t adc_channel;
 	enum adcch_positive_input pos;
 	enum adcch_negative_input neg;
 	uint8_t opamp_gain;
 	float adc_offset;
+	float adc_gain;
 	float sreies_resistor;
-	float composite_coefficient;
-	float R1R2_ratio;
 	};
 
 class ControlSettings{
