@@ -115,6 +115,9 @@
 // From module: TC - Timer Counter
 #include <tc.h>
 
+// From module: WDT - Watchdog Timer
+#include <wdt.h>
+
 // From module: XMEGA compiler driver
 #include <compiler.h>
 #include <status_codes.h>
