@@ -36,10 +36,11 @@
     <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.gfx" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.gfx.font" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="common.services.basic.gpio" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.ioport" value="Add" config="" content-id="Atmel.ASF" />
     <option id="xmega.drivers.adc" value="Add" config="" content-id="Atmel.ASF" />
     <option id="xmega.drivers.tc" value="Add" config="" content-id="Atmel.ASF" />
-    <option id="common.services.basic.gpio" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="xmega.drivers.wdt" value="Add" config="" content-id="Atmel.ASF" />
   </options>
   <configurations>
     <configuration key="config.gfx.display" value="ili9341_sdt028atft" default="ili9341_sdt028atft" content-id="Atmel.ASF" />
@@ -120,6 +121,8 @@
     <file path="src/Config/conf_spi_master.h" framework="" version="3.49.1" source="common\services\spi\xmega_spi\module_config\conf_spi_master.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/ASF/common/services/gpio/gpio.h" framework="" version="3.49.1" source="common\services\gpio\gpio.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/ASF/common/services/gpio/xmega_gpio/xmega_gpio.h" framework="" version="3.49.1" source="common\services\gpio\xmega_gpio\xmega_gpio.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/xmega/drivers/wdt/wdt.c" framework="" version="3.49.1" source="xmega\drivers\wdt\wdt.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/ASF/xmega/drivers/wdt/wdt.h" framework="" version="3.49.1" source="xmega\drivers\wdt\wdt.h" changed="False" content-id="Atmel.ASF" />
   </files>
   <documentation help="https://asf.microchip.com/docs/3.49.1/common.applications.user_application.user_board.xmegaau/html/index.html" />
   <offline-documentation help="" />
@@ -146,6 +149,28 @@
       <ToolName>Atmel-ICE</ToolName>
     </com_atmel_avrdbg_tool_atmelice>
     <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>PDI</InterfaceName>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+    <custom>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>PDI</InterfaceName>
+      </ToolOptions>
+      <ToolType xmlns="">custom</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Custom Programming Tool</ToolName>
+    </custom>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -190,6 +215,7 @@
       <Value>../src/ASF/common/services/spi/xmega_spi</Value>
       <Value>../src/ASF/common/services/spi</Value>
       <Value>../src/ASF/common/services/gpio</Value>
+      <Value>../src/ASF/xmega/drivers/wdt</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -234,6 +260,7 @@
       <Value>../src/ASF/common/services/spi/xmega_spi</Value>
       <Value>../src/ASF/common/services/spi</Value>
       <Value>../src/ASF/common/services/gpio</Value>
+      <Value>../src/ASF/xmega/drivers/wdt</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -271,6 +298,7 @@
       <Value>../src/ASF/common/services/spi/xmega_spi</Value>
       <Value>../src/ASF/common/services/spi</Value>
       <Value>../src/ASF/common/services/gpio</Value>
+      <Value>../src/ASF/xmega/drivers/wdt</Value>
     </ListValues>
   </avrgcccpp.assembler.general.IncludePaths>
 </AvrGccCpp>
@@ -319,6 +347,7 @@
       <Value>../src/ASF/common/services/spi/xmega_spi</Value>
       <Value>../src/ASF/common/services/spi</Value>
       <Value>../src/ASF/common/services/gpio</Value>
+      <Value>../src/ASF/xmega/drivers/wdt</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -364,6 +393,7 @@
       <Value>../src/ASF/common/services/spi/xmega_spi</Value>
       <Value>../src/ASF/common/services/spi</Value>
       <Value>../src/ASF/common/services/gpio</Value>
+      <Value>../src/ASF/xmega/drivers/wdt</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcccpp.compiler.optimization.level>
@@ -402,6 +432,7 @@
       <Value>../src/ASF/common/services/spi/xmega_spi</Value>
       <Value>../src/ASF/common/services/spi</Value>
       <Value>../src/ASF/common/services/gpio</Value>
+      <Value>../src/ASF/xmega/drivers/wdt</Value>
     </ListValues>
   </avrgcccpp.assembler.general.IncludePaths>
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
@@ -419,6 +450,18 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ASF\common\services\gfx\gfx_ili9341_sdt028atft.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\drivers\wdt\wdt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\xmega\drivers\wdt\wdt.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\libs\temp_sensor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libs\temp_sensor.h">
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\ASF\common\services\gpio\xmega_gpio\xmega_gpio.h">
@@ -671,11 +714,13 @@
     <Folder Include="src\ASF\xmega\drivers\sleep\" />
     <Folder Include="src\ASF\xmega\drivers\spi\" />
     <Folder Include="src\ASF\xmega\drivers\tc\" />
+    <Folder Include="src\ASF\xmega\drivers\wdt\" />
     <Folder Include="src\ASF\xmega\utils\" />
     <Folder Include="src\ASF\xmega\utils\assembler\" />
     <Folder Include="src\ASF\xmega\utils\bit_handling\" />
     <Folder Include="src\ASF\xmega\utils\preprocessor\" />
     <Folder Include="src\config\" />
+    <Folder Include="src\libs" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
